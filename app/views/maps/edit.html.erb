@@ -1,0 +1,76 @@
+<div class="map-index-container">
+  <a href="/map">戻る</a>
+  <div class="map-index-header">
+    <h2>ＭＡＰ情報登録</h2>
+    <p>場所を入力して検索ボタンを押すと、登録したいＭＡＰが表示されます</p>
+    <%=form_tag("/map/create")do%>
+    場所：<input type="text" value="高砂北公園" size="20" id="place" name="place">
+    <button type="button" onclick="search()">検索</button><br />
+    緯度：<input id="ido" name="latitude" value="35.74942679999999" readonly><br />
+    経度：<input id="keido" name="longitude" value="139.8724161" readonly><br />
+    <textarea name="map_comment" rows="2" cols="40" placeholder="コメント"></textarea><br />
+    <button type="submit">登録</button>
+
+  <%end%>
+
+  </div>
+
+<div class ="map-view">
+<script type="text/javascript">
+
+    function initMap() {
+        var ido = document.getElementById('ido').value
+        var keido = document.getElementById('keido').value
+        var latlng = new google.maps.LatLng(ido, keido);//中心の緯度, 経度
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 16,　//ズームの調整
+          center: latlng　//上で設定した中心
+        });
+        var marker = new google.maps.Marker({　//初期の位置の中心にマーカ設定
+          position: latlng,
+          map: map
+        });
+      }
+
+    function search(){
+        var mapOptions = {
+          zoom: 16,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+        var place = document.getElementById('place').value; //inputのplaceより場所、住所を取得
+        var geocoder = new google.maps.Geocoder();
+        // ジオコーディング　検索実行
+        geocoder.geocode({"address" : place}, function(results, status) {
+        // ジオコーディング　検索成功時
+        if (status == google.maps.GeocoderStatus.OK) {
+        var lat = results[0].geometry.location.lat(); //緯度を取得
+        var lng = results[0].geometry.location.lng(); //経度を取得
+        document.getElementById('ido').value = lat;　//inputに検索結果を反映
+        document.getElementById('keido').value = lng;　//inputに検索結果を反映
+
+        map.setCenter(results[0].geometry.location); //検索結果の地図を中心に表示
+
+        var marker = new google.maps.Marker({  //検索結果の地図中心にマーカ設定
+          position: results[0].geometry.location,
+          map: map
+        });
+        // ジオコーディング　検索失敗時
+        } else {
+          console.log('Geocode was not successful for the following reason: ' + status);
+        }
+        });
+
+      }
+
+</script>
+
+<div id="map">
+  <script async defer src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key=AIzaSyCtVfq2uxRKH5Nm-EQoOd_puwNwAvTVdBk&callback=initMap">
+  </script>
+</div>
+</div>
+
+</div>

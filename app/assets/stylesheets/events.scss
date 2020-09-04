@@ -1,0 +1,158 @@
+// Place all the styles related to the events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* スケジュール部分 */
+
+.schedule-container{
+  width:100%;
+  height:100%;
+  border-top: solid;
+  border-color: blue;
+
+}
+
+.schedule-header{
+  margin: 1%;
+
+}
+
+.schedule-header a {
+  font-size: 16px;
+  color: blue;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: blue;
+}
+
+.schedule-header a:hover {
+  color: red;
+}
+
+.schedule-header p{
+  margin-top:5px;
+}
+
+.event-title{
+  width: 370px;
+  border: inset;
+  background-color: white;
+  margin: 5px;
+  padding: 3px
+}
+
+.event-date{
+  border: inset;
+  background-color: white;
+  margin: 5px;
+  padding: 3px
+}
+
+.schedule-header select{
+	appearance: none;
+  margin: 5px;
+	padding: 7px 30px 7px 10px;
+	font-size: 93%;
+	line-height: 1.1em;
+	border-radius: 5px;
+  border: inset;
+	background-image: url(icon_arrow.png);
+	background-repeat: no-repeat;
+	background-size: 12px 10px;
+	background-position: right 10px center;
+	background-color: white;
+}
+
+.schedule-btn{
+  color: white;
+  
+}
+
+.schedule-map{
+  margin-top: 1%;
+  margin-bottom: 1%;
+
+}
+
+
+#calendar{
+  margin-left: 1%;
+  width: 70%;
+  height: 100%;
+
+}
+
+#calendar table{
+
+}
+
+
+#calendar th{
+  background-color: blue;
+  color: white;
+
+}
+
+.fc-day-header a{
+  color: white;
+
+}
+
+.schedule-container table{
+  width:80%;
+  margin: 0 auto;
+
+}
+
+.schedule-show-attendance{
+  border-top: ridge;
+  margin: 1%;
+  padding:1% 0;
+
+}
+
+.schedule-show-attendance textarea{
+  width: 25%;
+  margin-top: 1%;
+  padding: 0.4em 0.6em;
+  border: 1px solid #999;
+  border-radius: 0.8em;
+  letter-spacing: 1px;
+  box-shadow: inset 0.2em 0.2em 0.2em #ccc;
+  background-color: #fff;
+
+}
+
+.schedule-show-index {
+  margin: 1%;
+  padding-top:1%;
+  border-top: ridge;
+
+}
+
+.schedule-show-index table{
+  margin: 1%;
+  width: 80%;
+  border: 0;
+  background: #c2edee;
+
+}
+
+.schedule-show-index th{
+  background: #4470f6;
+  color: white;
+  font-size: 14px;
+
+}
+
+.schedule-show-index td {
+	background: #eee;
+  text-align: center;
+  font-size: 12px;
+}
+
+.schedule-show-index tr:nth-child(odd) td {
+	background: #fff;
+}
+
+/* スケジュール部分終わり */

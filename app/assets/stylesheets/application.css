@@ -1,0 +1,257 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require fullcalendar
+ */
+
+/* 共通部分 */
+@charaset #utf-8";
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.7;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul, li {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  margin: 0;
+  text-decoration: none;
+  color: #2d3133;
+  font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+input {
+  background-color: transparent;
+  outline-width: 0;
+}
+
+/*
+table{
+  margin: 1% 0;
+  border: 0;
+  font-size: 16px;
+  background: #c2edee;
+
+}
+
+th{
+  background: #4470f6;
+  color: white;
+
+}
+
+td{
+  background: #eee;
+  text-align: center;
+
+}
+
+*/
+
+.container {
+  width:100%;
+  margin: 0 auto;
+
+}
+
+.header {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.header-logo {
+  height: 100%;
+  width: 15%;
+  cursor: pointer;
+  cursor: hand;
+
+}
+
+.header-logo img{
+  height: 100%;
+
+}
+
+
+.header-logo h3{
+  padding: 1%;
+  letter-spacing: 0.1em;
+  height: 100%;
+
+}
+
+.header-center {
+  width: 25%;
+
+}
+
+.header-center a{
+  color: blue;
+  font-weight: bold;
+  text-decoration:underline;
+
+}
+
+.header-center a:hover{
+  color: red;
+
+}
+
+
+.header-right {
+  display: flex;
+  width: 60%;
+  justify-content:flex-end;
+
+}
+
+.header-right a{
+  padding: 1%;
+  width:25%;
+  height: 100%;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  cursor: hand;
+
+}
+
+
+.flash {
+  color: white;
+  background: rgb(251, 170, 88, 0.8);
+  text-align: center;
+  position: absolute;
+  padding: 10px, 0px;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  font-size: 20px;
+}
+
+.form-error span{
+  color: red;
+}
+
+.submit-btn {
+  width: 20%;
+  margin: 20px;
+  padding: 10px;
+  background-color: #656262;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  cursor: hand;
+}
+
+#submit-btn {
+  width: 10%;
+  margin: 10px;
+  padding: 10px;
+  background-color: #656262;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  cursor: hand;
+}
+
+
+/* 共通部分終わり */
+/* jquery共通部分 */
+
+.js-login-modal-wrapper {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+
+}
+
+.js-login-modal {
+  background: rgb(155, 245, 254);
+  left: 50%;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  text-align: right;
+}
+
+#js-login-close-modal {
+  padding-right: 10px;
+  color: white;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+  cursor: hand;
+}
+
+#js-login-form {
+  width: 100%;
+  text-align: center;
+  color: red;
+}
+
+#js-login-form h2 {
+  color: #5f5d60;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+#js-login-form input {
+  width: 70%;
+  margin: auto auto 20px;
+  font-size: 12px;
+  padding: 12px;
+  border: 1px solid #d0d5d8;
+  border-radius: 5px;
+}
+
+.login-form-control {
+  background-color: white;
+}
+
+#login-submit-btn {
+  display: block;
+  background-color: #656262;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+}
+
+/* jquery共通部分終わり */

@@ -1,0 +1,14 @@
+<div class="schedule-container">
+<div class="schedule-header">
+<a href="/top">トップに戻る</a>
+<h1>スケジュール</h1>
+
+<% if @administrator_user %>
+  <%=link_to("スケジュール作成はこちら","/events/new") %>
+<%end%>
+
+</div>
+
+<div id="calendar"></div>
+
+</div>

@@ -1,0 +1,27 @@
+<div class="map-index-container">
+
+<div class="map-index-header">
+  <h1>場所登録</h1>
+  <%=link_to("新規登録","/map/edit")%>
+</div>
+
+<div class="map-table">
+  <h2>登録一覧</h2>
+  <table>
+  <tr>
+    <th>場所</th>
+    <th>コメント</th>
+    <th>表示</th>
+    <th>削除</th>
+  </tr>
+  <% @maps.each do |map|%>
+    <tr>
+      <td><%=map.place %></td>
+      <td><%=map.map_comment %></td>
+      <td><%=link_to("表示","/map/#{map.id}/view")%></td>
+      <td><%=link_to("削除","/map/#{map.id}/destroy", {method: :post})%></td>
+    </tr>
+  <%end%>
+  </table>
+</div>
+</div>

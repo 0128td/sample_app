@@ -1,0 +1,20 @@
+<div class="schedule-container">
+<div class="schedule-header">
+<a href="/events/index">戻る</a>
+<h1>新規スケジュール登録</h1>
+
+  <%= form_with url:"/events/create" do |form| %>
+    タイトル：<input type="text" class="event-title" name="title" placeholder="対ジェファＦＣ_ＴＭ"><br>
+    開始　　：<input type="date" class="event-date" name="start_date" value="">
+          <%=select_tag "start_hour", options_for_select([["6時", "06"],["7時","07"],["8時","09"],["9時","09"],["10時", "10"],["11時","11"],["12時","12"],["13時","13"],["14時", "14"],["15時","15"],["16時","16"],["17時","17"],["18時","18"],["19時","19"],["20時","20"],["21時","21"]], :selected=>"10") ,class: "select" %>
+          <%=select_tag "start_min", options_for_select([["00分", "00"],["05分","05"],["10分","10"],["15分","15"],["20分", "20"],["25分","25"],["30分","30"],["35分","35"],["40分", "40"],["45分","45"],["50分","50"],["55分","55"]], :selected=>"00") ,class: "select" %><br>
+    終了　　：<input type="date" class="event-date" name="end_date" value="">
+          <%=select_tag "end_hour", options_for_select([["6時", "06"],["7時","07"],["8時","09"],["9時","09"],["10時", "10"],["11時","11"],["12時","12"],["13時","13"],["14時", "14"],["15時","15"],["16時","16"],["17時","17"],["18時","18"],["19時","19"],["20時","20"],["21時","21"]], :selected=>"10") ,class: "select" %>
+          <%=select_tag "end_min", options_for_select([["00分", "00"],["05分","05"],["10分","10"],["15分","15"],["20分", "20"],["25分","25"],["30分","30"],["35分","35"],["40分", "40"],["45分","45"],["50分","50"],["55分","55"]], :selected=>"00") ,class: "select" %><br>
+    場所　　：<%=collection_select(:map_id, :id, Map.all, :id, :place, include_blank: true) %><br>
+          <input id="submit-btn" type="submit" value="登録">
+
+  <%end%>
+
+</div>
+</div>
