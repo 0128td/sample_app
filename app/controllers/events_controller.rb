@@ -37,10 +37,10 @@ class EventsController < ApplicationController
 
     if @title && @start && @end
       Event.create(title:@title, start:@start, end:@end, map_id: params[:map_id][:id])
-      flash[:notice] = "登録しました！"
+      flash[:notice] = I18n.t("helpers.submit.create")
       redirect_to("/events/index")
     else
-      flash.now[:notice] = "未登録個所があります！"
+      flash.now[:notice] = I18n.t("errors.messages.no_entry")
       render("events/new")
     end
 
@@ -53,7 +53,7 @@ class EventsController < ApplicationController
     @end = params[:end_date] + "T" + params[:end_hour] + ":" + params[:end_min]
 
     @event.update(title:@title, start:@start, end:@end, map_id: params[:map_id][:id])
-    flash[:notice] = "更新しました！"
+    flash[:notice] = I18n.t("helpers.submit.update")
     redirect_to("/events/index")
 
   end
@@ -61,7 +61,7 @@ class EventsController < ApplicationController
   def destroy
     @event = Event.find_by(id: params[:id])
     @event.destroy
-    flash[:notice] = "削除しました"
+    flash[:notice] = I18n.t("helpers.submit.destroy")
     redirect_to("/events/index")
 
   end
@@ -80,7 +80,7 @@ class EventsController < ApplicationController
       attendance:params[:attendance],
       memo:params[:memo])
 
-    flash[:notice] = "登録しました！"
+    flash[:notice] = I18n.t("helpers.submit.create")
     redirect_to("/events/index")
 
   end
@@ -90,7 +90,7 @@ class EventsController < ApplicationController
     @atd = Atd.find_by(event_id: @event_id)
     @atd.update(attendance:params[:attendance],memo:params[:memo])
 
-    flash[:notice] = "登録しました！"
+    flash[:notice] = I18n.t("helpers.submit.create")
     redirect_to("/events/index")
 
   end

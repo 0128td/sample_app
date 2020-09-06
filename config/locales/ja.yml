@@ -138,6 +138,7 @@ ja:
       too_long: は%{count}文字以内で入力してください
       too_short: は%{count}文字以上で入力してください
       wrong_length: は%{count}文字で入力してください
+      no_entry: 未入力個所があります
     template:
       body: 次の項目を確認してください
       header:
@@ -147,9 +148,10 @@ ja:
     select:
       prompt: 選択してください
     submit:
-      create: 登録する
-      submit: 保存する
-      update: 更新する
+      create: 登録しました
+      submit: 保存しました
+      update: 更新しました
+      destroy: 削除しました
   number:
     currency:
       format:
