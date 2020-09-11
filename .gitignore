@@ -1,6 +1,11 @@
 # db フォルダ無視
 db/
 
+# 作業フォルダ無視
+events(退避)/
+rails5_dojo_3/
+rails5_dojo_4/
+
 # config フォルダ無視
 config/
 
